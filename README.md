@@ -1,4 +1,4 @@
-# SyncChat — Real-Time Chat Application (MERN + Socket.io)
+# SyncChat — Real-Time_Chat-Application (MERN + Socket.io)
 
 SyncChat is a scalable, real-time messaging application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.io. It features instant bi-directional messaging, live online/offline presence tracking, unread message badges, visual typing indicators, and media sharing.
 
