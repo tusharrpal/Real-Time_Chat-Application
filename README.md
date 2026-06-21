@@ -1,3 +1,4 @@
+<img width="1470" height="956" alt="Screenshot 2026-06-21 at 11 48 57 PM" src="https://github.com/user-attachments/assets/daab02de-f3b5-4e47-bc3c-bc8928ac3a87" />
 # SyncChat — Real-Time_Chat-Application (MERN + Socket.io)
 
 SyncChat is a scalable, real-time messaging application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.io. It features instant bi-directional messaging, live online/offline presence tracking, unread message badges, visual typing indicators, and media sharing.
@@ -111,3 +112,17 @@ NODE_ENV=development
 1. Navigate to `http://localhost:5173` and register **User A**.
 2. Open a new **Incognito (Private) browser tab** and register **User B**.
 3. You will immediately see each other online in the sidebars. Open a chat and enjoy real-time messaging, typing events, and file sharing!
+
+
+
+
+
+
+
+
+<img width="1470" height="956" alt="Screenshot 2026-06-21 at 11 50 46 PM" src="https://github.com/user-attachments/assets/4b5c8d07-eb72-4fc1-b65a-c4a79e88b1ec" />
+<img width="1470" height="956" alt="Screenshot 2026-06-21 at 11 50 12 PM" src="https://github.com/user-attachments/assets/9b6fcb7d-e482-411c-a4ad-f4e55b53010e" />
+<img width="1470" height="956" alt="Screenshot 2026-06-21 at 11 50 04 PM" src="https://github.com/user-attachments/assets/d534a6a7-17ff-4b56-877e-47990f5b1068" />
+<img width="1470" height="956" alt="Screenshot 2026-06-21 at 11 49 32 PM" src="https://github.com/user-attachments/assets/c2a5e95b-eb65-457f-8bed-dfb5f91184c6" />
+<img width="1470" height="956" alt="Screenshot 2026-06-21 at 11 49 24 PM" src="https://github.com/user-attachments/assets/36c61f90-8c06-4ba3-98bc-1c0225c61f92" />
+
