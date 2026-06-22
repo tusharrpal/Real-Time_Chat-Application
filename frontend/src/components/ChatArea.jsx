@@ -8,13 +8,19 @@ import '../App.css';
 const ChatArea = ({ selectedUser, messages, onSendMessage, isReceiverTyping, onBack }) => {
   const { authUser } = useAuth();
   const { onlineUsers } = useSocket();
-  const feedEndRef = useRef(null);
+  const messageFeedRef = useRef(null);
 
   const isOnline = onlineUsers.includes(selectedUser._id);
 
   // Auto-scroll to the bottom of the feed when new messages arrive or typing status changes
   useEffect(() => {
-    feedEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const feed = messageFeedRef.current;
+    if (!feed) return;
+
+    feed.scrollTo({
+      top: feed.scrollHeight,
+      behavior: 'smooth',
+    });
   }, [messages, isReceiverTyping]);
 
   const formatTime = (dateString) => {
@@ -54,7 +60,7 @@ const ChatArea = ({ selectedUser, messages, onSendMessage, isReceiverTyping, onB
       </div>
 
       {/* Message Feed */}
-      <div className="message-feed">
+      <div className="message-feed" ref={messageFeedRef}>
         {messages.map((msg) => {
           const isSentByMe = msg.senderId === authUser._id;
           return (
@@ -118,7 +124,7 @@ const ChatArea = ({ selectedUser, messages, onSendMessage, isReceiverTyping, onB
           </div>
         )}
 
-        <div ref={feedEndRef} />
+        <div />
       </div>
 
       {/* Message Input Component */}
