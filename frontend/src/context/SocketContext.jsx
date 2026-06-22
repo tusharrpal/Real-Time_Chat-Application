@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import { useAuth } from './AuthContext';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const SocketContext = createContext();
 
@@ -14,7 +15,7 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (authUser) {
       // Connect to the socket server using the current origin (which is proxied via Vite config)
-      const newSocket = io('/', {
+      const newSocket = io(API_URL, {
         query: {
           userId: authUser._id,
         },

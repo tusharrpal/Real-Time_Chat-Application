@@ -5,6 +5,7 @@ import Sidebar from '../components/Sidebar';
 import ChatArea from '../components/ChatArea';
 import { MessageSquare } from 'lucide-react';
 import '../App.css';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Home = () => {
   const { token, authUser } = useAuth();
@@ -21,7 +22,7 @@ const Home = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch('/api/messages/users', {
+        const res = await fetch(`${API_URL}/api/messages/users`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.ok) {
@@ -35,14 +36,14 @@ const Home = () => {
       }
     };
     if (token) fetchUsers();
-  }, [token]);
+  }, [token, API_URL]);
 
   // Fetch chat history when selectedUser changes
   useEffect(() => {
     const fetchChatHistory = async () => {
       if (!selectedUser) return;
       try {
-        const res = await fetch(`/api/messages/${selectedUser._id}`, {
+        const res = await fetch(`${API_URL}/api/messages/${selectedUser._id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.ok) {
@@ -55,7 +56,7 @@ const Home = () => {
     };
 
     fetchChatHistory();
-  }, [selectedUser, token]);
+  }, [selectedUser, token, API_URL]);
 
   // Handle Socket listeners
   useEffect(() => {
@@ -68,7 +69,7 @@ const Home = () => {
         setMessages((prev) => [...prev, newMessage]);
 
         // Tell backend/sender we've read it (since chat is open)
-        fetch(`/api/messages/${selectedUser._id}`, {
+        fetch(`${API_URL}/api/messages/${selectedUser._id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
       } else {
@@ -121,7 +122,7 @@ const Home = () => {
       if (text) formData.append('text', text);
       if (mediaFile) formData.append('media', mediaFile);
 
-      const res = await fetch(`/api/messages/send/${selectedUser._id}`, {
+      const res = await fetch(`${API_URL}/api/messages/send/${selectedUser._id}`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
