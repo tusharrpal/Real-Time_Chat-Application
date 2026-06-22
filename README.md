@@ -68,7 +68,8 @@ Create a `.env` file in your `/backend` directory and configure the variables:
 PORT=5001
 MONGODB_URI=mongodb://127.0.0.1:27017/realtime_chat
 JWT_SECRET=your_jwt_secret_key_here
-FRONTEND_URL=http://localhost:5173
+# Separate multiple deployed frontend origins with commas.
+FRONTEND_URL=http://localhost:5173,https://real-time-chat-application-five-beta.vercel.app
 NODE_ENV=development
 ```
 
@@ -124,6 +125,5 @@ NODE_ENV=development
 <img width="1470" height="956" alt="Screenshot 2026-06-21 at 11 50 04 PM" src="https://github.com/user-attachments/assets/d534a6a7-17ff-4b56-877e-47990f5b1068" />
 <img width="1470" height="956" alt="Screenshot 2026-06-21 at 11 49 32 PM" src="https://github.com/user-attachments/assets/c2a5e95b-eb65-457f-8bed-dfb5f91184c6" />
 <img width="1470" height="956" alt="Screenshot 2026-06-21 at 11 48 57 PM" src="https://github.com/user-attachments/assets/daab02de-f3b5-4e47-bc3c-bc8928ac3a87" />
-
 
 
