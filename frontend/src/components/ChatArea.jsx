@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useSocket } from '../context/SocketContext';
 import MessageInput from './MessageInput';
-import { FileText, Check, CheckCheck } from 'lucide-react';
+import { ArrowLeft, FileText, Check, CheckCheck } from 'lucide-react';
 import '../App.css';
 
-const ChatArea = ({ selectedUser, messages, onSendMessage, isReceiverTyping }) => {
+const ChatArea = ({ selectedUser, messages, onSendMessage, isReceiverTyping, onBack }) => {
   const { authUser } = useAuth();
   const { onlineUsers } = useSocket();
   const feedEndRef = useRef(null);
@@ -31,6 +31,14 @@ const ChatArea = ({ selectedUser, messages, onSendMessage, isReceiverTyping }) =
       {/* Active User Header */}
       <div className="chat-header">
         <div className="chat-header-user">
+          <button
+            type="button"
+            className="mobile-back-btn"
+            onClick={onBack}
+            aria-label="Back to conversations"
+          >
+            <ArrowLeft size={21} />
+          </button>
           <img
             src={selectedUser.profilePic}
             alt={selectedUser.username}

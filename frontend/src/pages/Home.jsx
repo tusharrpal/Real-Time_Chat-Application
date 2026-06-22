@@ -151,10 +151,10 @@ const Home = () => {
   };
 
   return (
-    <div className="main-container">
+    <div className={`main-container ${selectedUser ? 'mobile-chat-open' : ''}`}>
       {/* Sidebar Panel */}
       {loadingUsers ? (
-        <div style={{ width: '320px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="sidebar-loading">
           <div className="spinner" />
         </div>
       ) : (
@@ -174,6 +174,7 @@ const Home = () => {
           messages={messages}
           onSendMessage={handleSendMessage}
           isReceiverTyping={!!typingStatus[selectedUser._id]}
+          onBack={() => setSelectedUser(null)}
         />
       ) : (
         <div className="chat-welcome">

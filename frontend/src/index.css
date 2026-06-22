@@ -35,6 +35,11 @@ body {
   align-items: center;
 }
 
+#root {
+  width: 100%;
+  height: 100%;
+}
+
 /* Custom elegant scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
